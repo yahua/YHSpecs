@@ -36,10 +36,30 @@ Pod::Spec.new do |s|
 
 
 
-  s.source_files  = "YHCommon/**/*.{h,m}"
+  s.source_files  = "YHCommon/YHCommon.h"
   
   s.frameworks = "Foundation", "UIKit"
 
- 
+ pch_AF = <<-EOS
+#ifndef TARGET_OS_IOS
+  #define TARGET_OS_IOS TARGET_OS_IPHONE
+#endif
+#ifndef TARGET_OS_WATCH
+  #define TARGET_OS_WATCH 0
+#endif
+#ifndef TARGET_OS_TV
+  #define TARGET_OS_TV 0
+#endif
+EOS
+  s.prefix_header_contents = pch_AF
+  
+  s.ios.deployment_target = '7.0'
+  
+  s.subspec 'YHKVOController' do |ss|
+    ss.ios.deployment_target = '7.0'
+
+    ss.public_header_files = 'YHCommon/YHKVOController/*.h'
+    ss.source_files = 'YHCommon/YHKVOController'
+  end
 
 end
