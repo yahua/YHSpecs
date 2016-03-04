@@ -62,4 +62,54 @@ EOS
     ss.source_files = 'YHCommon/YHKVOController'
   end
 
+  s.subspec 'NSData' do |ss|
+    ss.ios.deployment_target = '7.0'
+
+    ss.public_header_files = 'YHCommon/NSData/*.h'
+    ss.source_files = 'YHCommon/NSData'
+  end
+
+  s.subspec 'NSDate' do |ss|
+    ss.ios.deployment_target = '7.0'
+
+    ss.public_header_files = 'YHCommon/NSDate/*.h'
+    ss.source_files = 'YHCommon/NSDate'
+  end
+
+  s.subspec 'NSString' do |ss|
+    ss.ios.deployment_target = '7.0'
+    ss.dependency 'YHCommon/NSData'
+
+    ss.public_header_files = 'YHCommon/NSString/*.h'
+    ss.source_files = 'YHCommon/NSString'
+  end
+
+  s.subspec 'UIButton' do |ss|
+    ss.ios.deployment_target = '7.0'
+
+    ss.public_header_files = 'YHCommon/UIButton/*.h'
+    ss.source_files = 'YHCommon/UIButton'
+  end
+
+  s.subspec 'UIColor' do |ss|
+    ss.ios.deployment_target = '7.0'
+
+    ss.public_header_files = 'YHCommon/UIColor/*.h'
+    ss.source_files = 'YHCommon/UIColor'
+  end
+
+  s.subspec 'UIDevice' do |ss|
+    ss.ios.deployment_target = '7.0'
+
+    ss.public_header_files = 'YHCommon/UIDevice/*.h'
+    ss.source_files = 'YHCommon/UIDevice'
+  end
+
+  s.subspec 'UIImage' do |ss|
+    ss.ios.deployment_target = '7.0'
+
+    ss.public_header_files = 'YHCommon/UIImage/*.h'
+    ss.source_files = 'YHCommon/UIImage'
+  end
+
 end
